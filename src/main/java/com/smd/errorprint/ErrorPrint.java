@@ -1,6 +1,5 @@
 package com.smd.errorprint;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.client.event.*;
@@ -52,8 +51,6 @@ public class ErrorPrint {
 
     @SubscribeEvent
     public void onRenderLivingPre(RenderLivingEvent.Pre event) {
-        Entity entity = event.getEntity();
-        LOGGER.info("Rendering entity: {}", entity.getName());
         checkGLError("RenderLivingEvent.Pre");
     }
 
